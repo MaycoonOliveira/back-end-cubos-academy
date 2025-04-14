@@ -1,5 +1,5 @@
 {
-  "name": "aula-rotas-intermediarios",
+  "name": "exercicio-resolvido-1",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -10,8 +10,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "aula-rotas-intermediarios": "file:",
-    "express": "^4.21.2"
+    "exercicio-resolvido-1": "file:",
+    "express": "^5.1.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.9"

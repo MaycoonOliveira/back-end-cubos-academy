@@ -10,6 +10,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "controlador-de-rodadas": "file:",
     "express": "^4.21.2"
   },
   "devDependencies": {

@@ -1,5 +1,5 @@
 {
-  "name": "exercicio-resolvido-1",
+  "name": "resolucao-01-api-rest",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "resolucao-01-api-rest": "file:"
   },
   "devDependencies": {
     "nodemon": "^3.1.9"

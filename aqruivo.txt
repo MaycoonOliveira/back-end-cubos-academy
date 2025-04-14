@@ -1,0 +1,120 @@
+scrip de configuração:
+    npm init -y
+    npm install express
+    npm install -D nodemon
+
+    package.json
+    "scripts": {
+        "dev": "nodemon ./src/index.js"
+    },
+
+    npm run dev
+
+    rodar pasta específica: 
+    back-end\pasta-a-ser-rodada> npm run dev
+
+- Unidade 2 - Rotas, Intermediários e Controladores 
+    - npm init -y
+    - .gitignore
+
+    - express - bliblioteca que cria o servidor
+        -npm install express
+
+    - startndo servidor:
+        - node ./src/index.js
+        - ir no google para verificar se foi startado certo: http://localhost:3000/
+
+    - instalação do nodemon: 
+        - npm install -D nodemon
+        - O Nodemon é uma ferramenta que permite reiniciar automaticamente o servidor Node. js sempre que alterações nos arquivos da aplicação são detectadas. Essa funcionalidade agiliza o processo de desenvolvimento, eliminando a necessidade de reinicializações manuais do servidor.
+        - depois de instalado: npm run dev
+
+    -  const { stack } = req.query //desestruturação
+    -  Criando parâmetros de consulta ou query paramns ( o " ? " é um para identificar um parâmetro de consulta)
+        -  http://localhost:3000/professores?stack=Backend
+
+    - Testando no Postman:
+        http://localhost:3000/professores
+        http://localhost:3000/professores/3
+        http://localhost:3000/professores?stack=Backend
+
+    - Controladores
+        - Responsável por fazer todo o processamento do que é solicitado na requisição e devolver a resposta para o cliente. Cliente X Servidor
+
+    - Intermediários / Middleware
+        - Requisição -> Rotas -> Intermediários / Middleware ---> Controladores
+    - Os Intermediários / Middleware - recebem como parâmetro o req, res, next
+
+- Unidade 2 - [Resoluções] - Primeiro 
+
+- Unidade 2 API - REST
+    API:
+     - É um conjunto de instruções que determina como se comunicar com uma aplicação.
+     - Diversos sistemas disponibilizam API'S para que sejam integradas com outros sistemas.
+     - O servidor que estamos aprendendo a desenvolver , o qual chamamos de backend, também é uma API
+     - Uma API pode ser comunicar com outra.
+     - Exemplos de API's:
+        - O youtube possui uma API para listar vídeos, buscar, ver comentários...
+        - O Instagram possui uma API para ver perfis de usuário, ver fotos...
+    REST:
+        - Representation State Transfer
+        - É um conjunto de restrições de arquitetura que podem ser usadas para construção de API'S
+    Organização de uma API REST
+        - Coleções de Recursos: Os dados manipulados numa API REST é chamado de recurso e os recursos são agrupados em coleções.
+        - Identificadores de Recursos: Cada recurso possui um identificador, único e imutável.
+        - Representação de Recurso com JSON: JSON é uma notação em que utilizamos para representar os recursos
+    JSON
+        - JavaScript Object Notation: É uma notação, baseada em JavaScript, usada para transitar dados na web
+    
+    Códigos de respostas HTTP 
+        - Status Code 
+            - 2xx: Sucesso
+                - 200: OK - Requisição bem sucedida.
+                - 201: Created - Requisição bem sucedida e algo foi criado.
+                - 204: No content - Requisição bem sucedida, sem conteúdo no corpo da resposta
+            - 4xx: Erro do cliente
+                - 400: Bad request, quando a requisição está com a sintaxe inválida
+                - 401: Unauthorized, quando o usuário não está autenticado
+                - 403: Forbidden, quando o usuário não tem permissão para acessar um recurso
+                - 404: Not found, quando o recurso solicitado não é encontrado
+            - 5xx: Erro do Servidor
+                - 500: Internal server error, quando o servidor encontra uma situação inesperada ou não sabe lidar com o erro
+
+
+    - Execício Resolvido 1
+        Continuando a implementação da API da Cubos Academy, implemente os endpoints abaixo, com suas respectivas regras de negócios.
+        // POST /instrutores/:idInstrutor/aulas
+        // Deve cadastrar uma aula para um instrutor específico. As informações da aula precisam ter, no mínimo, os campos titulo e descricao.
+
+        // GET /aulas
+        // Deve listar todas as aulas da coleção.
+
+        // GET /aulas/:id
+        // Deve detalhar as informações de uma aula.
+
+        // GET /instrutores/:idInstrutor/aulas
+        // Deve listar todas as aulas de um instrutor.
+
+
+    - Código Síngrono
+        Um código síncrono é executado sequencialmente, de forma que, antes de executar a próxima linha, a execução da linha anterior precisa ser finalizada.
+    
+    - Código Assíncrono
+        É executado de maneira não linear. Vai deixando tarefas para serem tratadas depois, conforme for necessário.
+
+    - [Resoluções] API REST 01/09
+
+        - Um controller no back-end é uma camada da arquitetura que gerencia as solicitações de entrada e saída de uma aplicação. Ele também fornece uma interface organizada para a lógica de negócios da aplicação. 
+        Responsabilidades do controller 
+        Abstrair as regras de negócio
+        Controlar o acesso aos dados
+        Gerenciar as solicitações de entrada e saída da aplicação
+        Fornecer uma interface consistente e organizada para a lógica de negócios da aplicação
+        Implementação do controller
+        Deve ser implementada de forma a ser escalável, fácil de entender e manter 
+        Pode obter dependências do domínio ou infra layer 
+        Pode utilizar DI (Dependency Injection) com a ajuda de um framework para lidar com dependências 
+        Pode utilizar uma abordagem de Exception Bubbling para eliminar duplicados logging messages 
+
+    - splice vai remover um elemnto de dentro do array, partindo do indice daquele elemento. Um ou mais elementos
+        alunosdb.splice(indiceAlunoExclusao, 1) - Primeiro argumento é o indice que quer excluir e o segundo argumento é quantos elementos quer excluir a partir do argumento.
